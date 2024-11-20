@@ -18,7 +18,7 @@
     let likeStatus = null;
     
     like.addEventListener('click', () => {
-      if (!likeStatus === true) {
+      if (likeStatus !== true) {
         likeStatus = true;
         like.classList.add("text-gray-500")
         dislike.classList.remove("text-red-500")
@@ -26,11 +26,11 @@
         likeStatus = null;
         like.classList.remove("text-gray-500")
       }
-      setTimeout(upDateUI, 1000);
+      setTimeout(upDateUI, 500);
     });
     
     dislike.addEventListener('click', () => {
-      if (!likeStatus === false) {
+      if (likeStatus !== false) {
         likeStatus = false;
         dislike.classList.add("text-red-500")
         like.classList.remove("text-gray-500")
@@ -38,17 +38,17 @@
         likeStatus = null;
         dislike.classList.remove("text-red-500")
       }
-      setTimeout(upDateUI, 1000);
+      setTimeout(upDateUI, 500);
     })
   
   
     function upDateUI() {
       if (likeStatus === true) {
-        console.log("kamu menekan like");
+        alert("kamu menekan like");
       } else if (likeStatus === false) {
-        console.log("kamu menekan dislike");
+        alert("kamu menekan dislike");
       } else {
-        console.log("tidak keduanya");
+        alert("tidak keduanya");
       }
     }
   </script>
